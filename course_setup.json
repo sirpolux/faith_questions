@@ -1,0 +1,51 @@
+[
+    {
+        "topic": "Basic Datatypes, Variables and Constants",
+        "sub_topics":[
+            {
+                "name":"Data types",
+                "video_url":"data_types.mp4"
+            },
+            {
+                "name":"Introduction to Variables",
+                "video_url":"variables.mp4"
+            },
+            {
+                "name":"Arrays",
+                "video_url":"arrays.mp4"
+            }
+
+        ],
+        "assessment_url":"https://sirpolux.github.io/faith_questions.io/basic_data_types_variables_and_constant"
+    }, 
+    {
+        "topic": "Operators",
+        "sub_topics":[
+            {
+                "name":"Assignment Operators, Arithemetic Operators and Logical operators",
+                "video_url":"operators1.mp4"
+            },
+            {
+                "name":"Relational Operators",
+                "video_url":"logical_operators.mp4"
+            }
+
+        ],
+        "assessment_url":"sample_assessment_url"
+    },
+    {
+        "topic": "Conditional Statements",
+        "sub_topics":[
+            {
+                "name":"If Statements",
+                "video_url":"dummy_vid.mp4"
+            },
+            {
+                "name":"Switch Statements",
+                "video_url":"dummy_vid.mp4"
+            }
+
+        ],
+        "assessment_url":"sample_assessment_url"
+    }
+]
