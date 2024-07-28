@@ -61,6 +61,21 @@
             }
 
         ],
-          "assessment_url":"https://sirpolux.github.io/faith_questions.io/loops"
+          "assessment_url":"https://sirpolux.github.io/faith_questions.io/introduction-to-loops"
+    },
+    {
+        "topic": "Functions",
+        "sub_topics":[
+            {
+                "name":"Creating a function",
+                "video_url":"function1.mp4"
+            },
+            {
+                "name":"Calling a function",
+                "video_url":"function2.mp4"
+            }
+        ],
+          "assessment_url":"https://sirpolux.github.io/faith_questions.io/introduction-to-loops"
     }
+
 ]

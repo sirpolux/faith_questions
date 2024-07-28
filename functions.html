@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to Functions Assessment</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .container {
+      margin-top: 20px;
+    }
+    .assessment-title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h4 class="assessment-title">Introduction to Functions Assessment</h4>
+    <form id="assessmentForm">
+      <!-- Questions -->
+      <div class="question">
+        <p>1. What is a function in Java?</p>
+        <p>
+          <label><input name="q1" type="radio" value="a"/><span>A block of code that performs a specific task</span></label>
+        </p>
+        <p>
+          <label><input name="q1" type="radio" value="b"/><span>A type of variable</span></label>
+        </p>
+        <p>
+          <label><input name="q1" type="radio" value="c"/><span>A statement that controls the flow of the program</span></label>
+        </p>
+        <p>
+          <label><input name="q1" type="radio" value="d"/><span>An object</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>2. How do you define a function in Java?</p>
+        <p>
+          <label><input name="q2" type="radio" value="a"/><span>function name() { ... }</span></label>
+        </p>
+        <p>
+          <label><input name="q2" type="radio" value="b"/><span>void functionName() { ... }</span></label>
+        </p>
+        <p>
+          <label><input name="q2" type="radio" value="c"/><span>def functionName() { ... }</span></label>
+        </p>
+        <p>
+          <label><input name="q2" type="radio" value="d"/><span>function functionName() { ... }</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>3. What is the purpose of the return statement in a function?</p>
+        <p>
+          <label><input name="q3" type="radio" value="a"/><span>To exit the function</span></label>
+        </p>
+        <p>
+          <label><input name="q3" type="radio" value="b"/><span>To return a value from the function</span></label>
+        </p>
+        <p>
+          <label><input name="q3" type="radio" value="c"/><span>To create a new function</span></label>
+        </p>
+        <p>
+          <label><input name="q3" type="radio" value="d"/><span>To print output to the console</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>4. What is a method in Java?</p>
+        <p>
+          <label><input name="q4" type="radio" value="a"/><span>A function that is part of a class</span></label>
+        </p>
+        <p>
+          <label><input name="q4" type="radio" value="b"/><span>A special type of variable</span></label>
+        </p>
+        <p>
+          <label><input name="q4" type="radio" value="c"/><span>An object of the class</span></label>
+        </p>
+        <p>
+          <label><input name="q4" type="radio" value="d"/><span>A block of code that cannot be reused</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>5. Which of the following is true about a function?</p>
+        <p>
+          <label><input name="q5" type="radio" value="a"/><span>Functions can only take one parameter</span></label>
+        </p>
+        <p>
+          <label><input name="q5" type="radio" value="b"/><span>Functions can be overloaded</span></label>
+        </p>
+        <p>
+          <label><input name="q5" type="radio" value="c"/><span>Functions cannot return values</span></label>
+        </p>
+        <p>
+          <label><input name="q5" type="radio" value="d"/><span>Functions must always be public</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>6. What is the correct way to call a function named <code>calculateSum</code>?</p>
+        <p>
+          <label><input name="q6" type="radio" value="a"/><span>calculateSum[];</span></label>
+        </p>
+        <p>
+          <label><input name="q6" type="radio" value="b"/><span>calculateSum();</span></label>
+        </p>
+        <p>
+          <label><input name="q6" type="radio" value="c"/><span>call calculateSum();</span></label>
+        </p>
+        <p>
+          <label><input name="q6" type="radio" value="d"/><span>run calculateSum();</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>7. What happens if you call a function with the wrong number of arguments?</p>
+        <p>
+          <label><input name="q7" type="radio" value="a"/><span>The code will compile and run without errors</span></label>
+        </p>
+        <p>
+          <label><input name="q7" type="radio" value="b"/><span>An error will be thrown at runtime</span></label>
+        </p>
+        <p>
+          <label><input name="q7" type="radio" value="c"/><span>It will return null</span></label>
+        </p>
+        <p>
+          <label><input name="q7" type="radio" value="d"/><span>The program will crash</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>8. Which of the following is NOT a valid function declaration?</p>
+        <p>
+          <label><input name="q8" type="radio" value="a"/><span>void myFunction() { }</span></label>
+        </p>
+        <p>
+          <label><input name="q8" type="radio" value="b"/><span>int myFunction(int a, int b) { return a + b; }</span></label>
+        </p>
+        <p>
+          <label><input name="q8" type="radio" value="c"/><span>myFunction() { }</span></label>
+        </p>
+        <p>
+          <label><input name="q8" type="radio" value="d"/><span>String myFunction() { return "Hello"; }</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>9. What does the keyword <code>static</code> mean in a function declaration?</p>
+        <p>
+          <label><input name="q9" type="radio" value="a"/><span>The function can only be called from within its class</span></label>
+        </p>
+        <p>
+          <label><input name="q9" type="radio" value="b"/><span>The function belongs to the class, not to an instance</span></label>
+        </p>
+        <p>
+          <label><input name="q9" type="radio" value="c"/><span>The function can be overridden</span></label>
+        </p>
+        <p>
+          <label><input name="q9" type="radio" value="d"/><span>All of the above</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>10. How do you pass an argument to a function in Java?</p>
+        <p>
+          <label><input name="q10" type="radio" value="a"/><span>By value</span></label>
+        </p>
+        <p>
+          <label><input name="q10" type="radio" value="b"/><span>By reference</span></label>
+        </p>
+        <p>
+          <label><input name="q10" type="radio" value="c"/><span>Both a and b</span></label>
+        </p>
+        <p>
+          <label><input name="q10" type="radio" value="d"/><span>None of the above</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>11. What is a recursive function?</p>
+        <p>
+          <label><input name="q11" type="radio" value="a"/><span>A function that calls itself</span></label>
+        </p>
+        <p>
+          <label><input name="q11" type="radio" value="b"/><span>A function that cannot return a value</span></label>
+        </p>
+        <p>
+          <label><input name="q11" type="radio" value="c"/><span>A function that calls another function</span></label>
+        </p>
+        <p>
+          <label><input name="q11" type="radio" value="d"/><span>A function defined inside another function</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>12. What will be the output of the following code: <code>int add(int a, int b) { return a + b; } System.out.println(add(2, 3));</code>?</p>
+        <p>
+          <label><input name="q12" type="radio" value="a"/><span>5</span></label>
+        </p>
+        <p>
+          <label><input name="q12" type="radio" value="b"/><span>23</span></label>
+        </p>
+        <p>
+          <label><input name="q12" type="radio" value="c"/><span>Error</span></label>
+        </p>
+        <p>
+          <label><input name="q12" type="radio" value="d"/><span>No output</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>13. What is method overloading?</p>
+        <p>
+          <label><input name="q13" type="radio" value="a"/><span>Having multiple methods with the same name but different parameters</span></label>
+        </p>
+        <p>
+          <label><input name="q13" type="radio" value="b"/><span>Having multiple methods with different names</span></label>
+        </p>
+        <p>
+          <label><input name="q13" type="radio" value="c"/><span>Changing the implementation of a method</span></label>
+        </p>
+        <p>
+          <label><input name="q13" type="radio" value="d"/><span>None of the above</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>14. Which of the following is a valid way to declare a function with parameters?</p>
+        <p>
+          <label><input name="q14" type="radio" value="a"/><span>void functionName(int a, int b) { }</span></label>
+        </p>
+        <p>
+          <label><input name="q14" type="radio" value="b"/><span>void functionName(int a) { }</span></label>
+        </p>
+        <p>
+          <label><input name="q14" type="radio" value="c"/><span>Both a and b</span></label>
+        </p>
+        <p>
+          <label><input name="q14" type="radio" value="d"/><span>None of the above</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>15. What will happen if you forget to include the return type in a function declaration?</p>
+        <p>
+          <label><input name="q15" type="radio" value="a"/><span>The code will compile and run</span></label>
+        </p>
+        <p>
+          <label><input name="q15" type="radio" value="b"/><span>An error will occur</span></label>
+        </p>
+        <p>
+          <label><input name="q15" type="radio" value="c"/><span>The function will return null</span></label>
+        </p>
+        <p>
+          <label><input name="q15" type="radio" value="d"/><span>None of the above</span></label>
+        </p>
+      </div>
+      <div class="center">
+        <button type="submit" class="btn waves-effect waves-light">Submit Assessment</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Modal for Result -->
+  <div id="resultModal" class="modal">
+    <div class="modal-content">
+      <h5>Assessment Result</h5>
+      <p id="resultMessage"></p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn">Close</a>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.modal');
+      var instances = M.Modal.init(elems);
+    });
+
+    const correctAnswers = {
+      q1: 'a',
+      q2: 'b',
+      q3: 'b',
+      q4: 'a',
+      q5: 'b',
+      q6: 'b',
+      q7: 'b',
+      q8: 'c',
+      q9: 'b',
+      q10: 'c',
+      q11: 'a',
+      q12: 'a',
+      q13: 'a',
+      q14: 'c',
+      q15: 'b'
+    };
+
+    document.getElementById('assessmentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let score = 0;
+
+      for (let question in correctAnswers) {
+        const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+        if (selectedOption && selectedOption.value === correctAnswers[question]) {
+          score += 2; // Each question is worth 2 points
+        }
+      }
+
+      const resultMessage = `Your score is: ${score} out of 30.`;
+      document.getElementById('resultMessage').innerText = resultMessage;
+      var instance = M.Modal.getInstance(document.getElementById('resultModal'));
+      instance.open();
+    });
+  </script>
+</body>
+</html>
