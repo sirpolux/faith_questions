@@ -31,7 +31,7 @@
             }
 
         ],
-        "assessment_url":"sample_assessment_url"
+          "assessment_url":"https://sirpolux.github.io/faith_questions.io/operators"
     },
     {
         "topic": "Conditional Statements",
@@ -46,6 +46,21 @@
             }
 
         ],
-        "assessment_url":"sample_assessment_url"
+          "assessment_url":"https://sirpolux.github.io/faith_questions.io/conditional_statements"
+    },
+    {
+        "topic": "Loops",
+        "sub_topics":[
+            {
+                "name":"Introduction to Loops (For loops)",
+                "video_url":"int-to-loop.mp4"
+            },
+            {
+                "name":"While and do while loops",
+                "video_url":"while-do-while-loop.mp4"
+            }
+
+        ],
+          "assessment_url":"https://sirpolux.github.io/faith_questions.io/loops"
     }
 ]
