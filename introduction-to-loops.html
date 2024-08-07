@@ -26,6 +26,7 @@
 <body>
   <div class="container">
     <h4 class="assessment-title">Introduction to Loops Assessment</h4>
+    <h5>Student name: <span id="student-name" style="text-transform:uppercase;"> </span></h5>
     <form id="assessmentForm">
       <!-- Questions -->
       <div class="question">
@@ -259,14 +260,15 @@
     </form>
   </div>
 
-  <!-- Modal for Result -->
-  <div id="resultModal" class="modal">
+   <!-- Modal Structure -->
+   <div id="modal1" class="modal">
     <div class="modal-content">
-      <h5>Assessment Result</h5>
-      <p id="resultMessage"></p>
+      <h4>Assessment Result</h4>
+      <h6>Student name: <span id="student-name2" style="text-transform: uppercase;"> </span> </h6>
+      <p id="modal-result-text"></p>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn">Close</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
     </div>
   </div>
 
@@ -276,6 +278,25 @@
       var elems = document.querySelectorAll('.modal');
       var instances = M.Modal.init(elems);
     });
+
+        // Get the current URL
+        const currentUrl = window.location.href;
+
+        // Create a URL object
+        const url = new URL(currentUrl);
+
+        // Get the search parameters
+        const params = new URLSearchParams(url.search);
+
+        // Retrieve the 'name' parameter
+        const nameValue = params.get('name');
+
+        // Log the value to the console
+        console.log(nameValue);
+
+        var nameField = document.getElementById('student-name').innerHTML = nameValue;
+        var nameField = document.getElementById('student-name2').innerHTML = nameValue;
+
 
     const correctAnswers = {
       q1: 'a',
@@ -306,9 +327,16 @@
         }
       }
 
-      const resultMessage = `Your score is: ${score} out of 30.`;
-      document.getElementById('resultMessage').innerText = resultMessage;
-      var instance = M.Modal.getInstance(document.getElementById('resultModal'));
+      const resultText = `Your Score: ${score} out of 30`;
+      const modalResultText = document.getElementById('modal-result-text');
+      modalResultText.innerHTML = `<h5>${resultText}</h5>`;
+      if (score < 15) {
+        modalResultText.innerHTML += '<p>You need to improve.</p>';
+      } else {
+        modalResultText.innerHTML += '<p>Well done!</p>';
+      }
+
+      var instance = M.Modal.getInstance(document.getElementById('modal1'));
       instance.open();
     });
   </script>
