@@ -16,7 +16,7 @@
     <script>
         document.getElementById('runButton').addEventListener('click', async () => {
             //const code = document.getElementById('code').value;
-            const code="public class Test { public static void main(String[] args) { System.out.println(\"Hello, World!\"); }}";
+            const code=" System.out.println(\"Hello, World!\");";
             const outputElement = document.getElementById('output');
 
             // Clear previous output
@@ -37,7 +37,9 @@
                     }),
                 });
 
+                
                 const result = await response.json();
+                console.log(result);
 
                 if (result.output) {
                     outputElement.textContent = result.output;
