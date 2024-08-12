@@ -16,14 +16,16 @@
     <script>
         document.getElementById('runButton').addEventListener('click', async () => {
             //const code = document.getElementById('code').value;
-            const code=" System.out.println(\"Hello, World!\");";
+            const code="public class Test { public static void main(String[] args) { System.out.println(\"Hello, World!\"); }}";
             const outputElement = document.getElementById('output');
 
             // Clear previous output
+            //'https://cors-anywhere.herokuapp.com/https://api.jdoodle.com/v1/execute
             outputElement.textContent = 'Running...';
+            const url = 'https://corsproxy.io/?' + encodeURIComponent('https://api.jdoodle.com/v1/execute');
 
             try {
-                const response = await fetch('https://cors-anywhere.herokuapp.com/https://api.jdoodle.com/v1/execute', {
+                const response = await fetch(url, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

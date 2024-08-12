@@ -37,14 +37,9 @@
         "topic": "Conditional Statements",
         "sub_topics":[
             {
-                "name":"If Statements",
-                "video_url":"dummy_vid.mp4"
-            },
-            {
-                "name":"Switch Statements",
-                "video_url":"dummy_vid.mp4"
+                "name":"If, If-esle-if and switch statement",
+                "video_url":"conditional_statement.mp4"
             }
-
         ],
           "assessment_url":"https://sirpolux.github.io/faith_questions.io/conditional_statements"
     },
@@ -75,7 +70,7 @@
                 "video_url":"function2.mp4"
             }
         ],
-          "assessment_url":"https://sirpolux.github.io/faith_questions.io/introduction-to-loops"
+          "assessment_url":"https://sirpolux.github.io/faith_questions.io/functions"
     }
 
 ]
