@@ -13,43 +13,44 @@
     <h3>Output:</h3>
     <pre id="output"></pre>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        document.getElementById('runButton').addEventListener('click', async () => {
-            //const code = document.getElementById('code').value;
-            const code=" System.out.println(\"Hello, World!\");";
-            const outputElement = document.getElementById('output');
-
-            // Clear previous output
-            outputElement.textContent = 'Running...';
-
-            try {
-                const response = await fetch('https://cors-anywhere.herokuapp.com/https://api.jdoodle.com/v1/execute', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        clientId: 'dfc516f77cbf3cb7fbb3142c6ba2fcae',
-                        clientSecret: '507e4abf1f5d15f81186405de655b8a9c29c8b645477a92bf417271ae1a1665',
-                        script: code,
-                        language: 'java',
-                        versionIndex: '0',
-                    }),
-                });
-
-                
-                const result = await response.json();
-                console.log(result);
-
-                if (result.output) {
-                    outputElement.textContent = result.output;
-                } else {
-                    outputElement.textContent = 'Error: ' + (result.error || 'Unknown error');
+        $(document).ready(function() {
+            $('#runButton').click(async function() {
+                const code = "public class Test { public static void main(String[] args) { System.out.println(\"Hello, World!\"); }}";
+                const outputElement = $('#output');
+    
+                // Clear previous output
+                outputElement.text('Running...');
+    
+                try {
+                    const response = await fetch('https://cors-anywhere.herokuapp.com/https://api.jdoodle.com/v1/execute', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            clientId: 'dfc516f77cbf3cb7fbb3142c6ba2fcae',
+                            clientSecret: '507e4abf1f5d15f81186405de655b8a9c29c8b645477a92bf417271ae1a1665',
+                            script: code,
+                            language: 'java',
+                            versionIndex: '0',
+                        }),
+                    });
+    
+                    const result = await response.json();
+                    console.log(result);
+    
+                    if (result.output) {
+                        outputElement.text(result.output);
+                    } else {
+                        outputElement.text('Error: ' + (result.error || 'Unknown error'));
+                    }
+                } catch (error) {
+                    outputElement.text('Error: ' + error.message);
                 }
-            } catch (error) {
-                outputElement.textContent = 'Error: ' + error.message;
-            }
+            });
         });
     </script>
-</body>
+    </body>
 </html>

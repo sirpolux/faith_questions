@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Code Runner</title>
+</head>
+<body>
+    <h1>Java Code Runner</h1>
+    <textarea id="code" rows="10" cols="50" placeholder="Write your Java code here..."></textarea><br>
+    <button id="runButton">Run Code</button>
+    <h3>Output:</h3>
+    <pre id="output"></pre>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#runButton').click(function() {
+                const code = "public class Test { public static void main(String[] args) { System.out.println(\"Hello, World!\"); }}";
+                const outputElement = $('#output');
+    
+                // Clear previous output
+                outputElement.text('Running...');
+    
+                // Prepare the data to be sent
+                const postData = {
+                    clientId: 'dfc516f77cbf3cb7fbb3142c6ba2fcae',
+                    clientSecret: '507e4abf1f5d15f81186405de655b8a9c29c8b645477a92bf417271ae1a1665',
+                    script: code,
+                    language: 'java',
+                    versionIndex: '0',
+                };
+    
+                // Use AllOrigins to handle CORS and send a POST request
+                $.ajax({
+                    url: 'https://api.allorigins.win/post?url=' + encodeURIComponent('https://api.jdoodle.com/v1/execute'),
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(postData),
+                    success: function(data) {
+                        const result = JSON.parse(data.contents);
+                        console.log(result);
+                        if (result.output) {
+                            outputElement.text(result.output);
+                        } else {
+                            outputElement.text('Error: ' + (result.error || 'Unknown error'));
+                        }
+                    },
+                    error: function(jqxhr, textStatus, error) {
+                        const err = textStatus + ", " + error;
+                        outputElement.text('Request Failed: ' + err);
+                    }
+                });
+            });
+        });
+    </script>
+    
+    </body>
+</html>
