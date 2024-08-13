@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Datatypes, Variables, Relational Operators, and Constants Assessment</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .container {
+      margin-top: 20px;
+    }
+    .assessment-title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h4 class="assessment-title">Basic Datatypes, Variables, Relational Operators, and Constants Assessment</h4>
+    <h5>Student name: <span id="student-name" style="text-transform:uppercase;"> </span></h5>
+    <form id="assessmentForm">
+      <!-- Questions -->
+      <div class="question">
+        <p>1. Which operator is used to assign a value to a variable in Java?</p>
+        <p>
+          <label><input name="q1" type="radio" value="a"/><span>=</span></label>
+        </p>
+        <p>
+          <label><input name="q1" type="radio" value="b"/><span>==</span></label>
+        </p>
+        <p>
+          <label><input name="q1" type="radio" value="c"/><span>:=</span></label>
+        </p>
+        <p>
+          <label><input name="q1" type="radio" value="d"/><span>=></span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>2. What is the result of the expression 5 + 3 * 2?</p>
+        <p>
+          <label><input name="q2" type="radio" value="a"/><span>16</span></label>
+        </p>
+        <p>
+          <label><input name="q2" type="radio" value="b"/><span>11</span></label>
+        </p>
+        <p>
+          <label><input name="q2" type="radio" value="c"/><span>8</span></label>
+        </p>
+        <p>
+          <label><input name="q2" type="radio" value="d"/><span>10</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>3. Which operator is used to add two numbers in Java?</p>
+        <p>
+          <label><input name="q3" type="radio" value="a"/><span>+</span></label>
+        </p>
+        <p>
+          <label><input name="q3" type="radio" value="b"/><span>-</span></label>
+        </p>
+        <p>
+          <label><input name="q3" type="radio" value="c"/><span>*</span></label>
+        </p>
+        <p>
+          <label><input name="q3" type="radio" value="d"/><span>/</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>4. What is the result of the expression 10 % 3?</p>
+        <p>
+          <label><input name="q4" type="radio" value="a"/><span>1</span></label>
+        </p>
+        <p>
+          <label><input name="q4" type="radio" value="b"/><span>2</span></label>
+        </p>
+        <p>
+          <label><input name="q4" type="radio" value="c"/><span>3</span></label>
+        </p>
+        <p>
+          <label><input name="q4" type="radio" value="d"/><span>0</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>5. Which operator is used to perform subtraction in Java?</p>
+        <p>
+          <label><input name="q5" type="radio" value="a"/><span>+</span></label>
+        </p>
+        <p>
+          <label><input name="q5" type="radio" value="b"/><span>-</span></label>
+        </p>
+        <p>
+          <label><input name="q5" type="radio" value="c"/><span>*</span></label>
+        </p>
+        <p>
+          <label><input name="q5" type="radio" value="d"/><span>/</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>6. Which of the following is a logical operator in Java?</p>
+        <p>
+          <label><input name="q6" type="radio" value="a"/><span>&&</span></label>
+        </p>
+        <p>
+          <label><input name="q6" type="radio" value="b"/><span>&</span></label>
+        </p>
+        <p>
+          <label><input name="q6" type="radio" value="c"/><span>|</span></label>
+        </p>
+        <p>
+          <label><input name="q6" type="radio" value="d"/><span>++</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>7. What will be the result of true && false?</p>
+        <p>
+          <label><input name="q7" type="radio" value="a"/><span>true</span></label>
+        </p>
+        <p>
+          <label><input name="q7" type="radio" value="b"/><span>false</span></label>
+        </p>
+        <p>
+          <label><input name="q7" type="radio" value="c"/><span>1</span></label>
+        </p>
+        <p>
+          <label><input name="q7" type="radio" value="d"/><span>0</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>8. What does the != operator do in Java?</p>
+        <p>
+          <label><input name="q8" type="radio" value="a"/><span>Checks if two values are equal</span></label>
+        </p>
+        <p>
+          <label><input name="q8" type="radio" value="b"/><span>Checks if two values are not equal</span></label>
+        </p>
+        <p>
+          <label><input name="q8" type="radio" value="c"/><span>Assigns a value</span></label>
+        </p>
+        <p>
+          <label><input name="q8" type="radio" value="d"/><span>Compares two objects</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>9. What is the output of the expression 5 < 10 && 10 > 5?</p>
+        <p>
+          <label><input name="q9" type="radio" value="a"/><span>true</span></label>
+        </p>
+        <p>
+          <label><input name="q9" type="radio" value="b"/><span>false</span></label>
+        </p>
+        <p>
+          <label><input name="q9" type="radio" value="c"/><span>1</span></label>
+        </p>
+        <p>
+          <label><input name="q9" type="radio" value="d"/><span>0</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>10. Which operator is used to perform multiplication in Java?</p>
+        <p>
+          <label><input name="q10" type="radio" value="a"/><span>*</span></label>
+        </p>
+        <p>
+          <label><input name="q10" type="radio" value="b"/><span>/</span></label>
+        </p>
+        <p>
+          <label><input name="q10" type="radio" value="c"/><span>+</span></label>
+        </p>
+        <p>
+          <label><input name="q10" type="radio" value="d"/><span>-</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>11. Which operator is used to check equality in Java?</p>
+        <p>
+          <label><input name="q11" type="radio" value="a"/><span>==</span></label>
+        </p>
+        <p>
+          <label><input name="q11" type="radio" value="b"/><span>===</span></label>
+        </p>
+        <p>
+          <label><input name="q11" type="radio" value="c"/><span>=</span></label>
+        </p>
+        <p>
+          <label><input name="q11" type="radio" value="d"/><span>!=</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>12. What is the output of the expression 4 + 5 * 2?</p>
+        <p>
+          <label><input name="q12" type="radio" value="a"/><span>14</span></label>
+        </p>
+        <p>
+          <label><input name="q12" type="radio" value="b"/><span>10</span></label>
+        </p>
+        <p>
+          <label><input name="q12" type="radio" value="c"/><span>13</span></label>
+        </p>
+        <p>
+          <label><input name="q12" type="radio" value="d"/><span>9</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>13. What is the result of the expression 10 / 2 * 5?</p>
+        <p>
+          <label><input name="q13" type="radio" value="a"/><span>25</span></label>
+        </p>
+        <p>
+          <label><input name="q13" type="radio" value="b"/><span>10</span></label>
+        </p>
+        <p>
+          <label><input name="q13" type="radio" value="c"/><span>5</span></label>
+        </p>
+        <p>
+          <label><input name="q13" type="radio" value="d"/><span>20</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>14. What is the value of x after the following statement: int x = 10; x += 5;</p>
+        <p>
+          <label><input name="q14" type="radio" value="a"/><span>15</span></label>
+        </p>
+        <p>
+          <label><input name="q14" type="radio" value="b"/><span>10</span></label>
+        </p>
+        <p>
+          <label><input name="q14" type="radio" value="c"/><span>5</span></label>
+        </p>
+        <p>
+          <label><input name="q14" type="radio" value="d"/><span>20</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>15. What is the output of the expression !(true && false)?</p>
+        <p>
+          <label><input name="q15" type="radio" value="a"/><span>true</span></label>
+        </p>
+        <p>
+          <label><input name="q15" type="radio" value="b"/><span>false</span></label>
+        </p>
+        <p>
+          <label><input name="q15" type="radio" value="c"/><span>1</span></label>
+        </p>
+        <p>
+          <label><input name="q15" type="radio" value="d"/><span>0</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>16. Which operator is used for incrementing a variable?</p>
+        <p>
+          <label><input name="q16" type="radio" value="a"/><span>+</span></label>
+        </p>
+        <p>
+          <label><input name="q16" type="radio" value="b"/><span>++</span></label>
+        </p>
+        <p>
+          <label><input name="q16" type="radio" value="c"/><span>+=</span></label>
+        </p>
+        <p>
+          <label><input name="q16" type="radio" value="d"/><span>--</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>17. What is the output of the expression 8 > 5 || 5 > 10?</p>
+        <p>
+          <label><input name="q17" type="radio" value="a"/><span>true</span></label>
+        </p>
+        <p>
+          <label><input name="q17" type="radio" value="b"/><span>false</span></label>
+        </p>
+        <p>
+          <label><input name="q17" type="radio" value="c"/><span>1</span></label>
+        </p>
+        <p>
+          <label><input name="q17" type="radio" value="d"/><span>0</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>18. What is the value of y after the following statement: int y = 10; y -= 3;</p>
+        <p>
+          <label><input name="q18" type="radio" value="a"/><span>7</span></label>
+        </p>
+        <p>
+          <label><input name="q18" type="radio" value="b"/><span>10</span></label>
+        </p>
+        <p>
+          <label><input name="q18" type="radio" value="c"/><span>3</span></label>
+        </p>
+        <p>
+          <label><input name="q18" type="radio" value="d"/><span>13</span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>19. Which operator is used to compare two values in Java?</p>
+        <p>
+          <label><input name="q19" type="radio" value="a"/><span>==</span></label>
+        </p>
+        <p>
+          <label><input name="q19" type="radio" value="b"/><span>!=</span></label>
+        </p>
+        <p>
+          <label><input name="q19" type="radio" value="c"/><span>===</span></label>
+        </p>
+        <p>
+          <label><input name="q19" type="radio" value="d"/><span>></span></label>
+        </p>
+      </div>
+      <div class="question">
+        <p>20. What will be the result of the expression !(5 < 3)?</p>
+        <p>
+          <label><input name="q20" type="radio" value="a"/><span>true</span></label>
+        </p>
+        <p>
+          <label><input name="q20" type="radio" value="b"/><span>false</span></label>
+        </p>
+        <p>
+          <label><input name="q20" type="radio" value="c"/><span>1</span></label>
+        </p>
+        <p>
+          <label><input name="q20" type="radio" value="d"/><span>0</span></label>
+        </p>
+      </div>
+      <div class="center">
+        <button type="submit" class="btn waves-effect waves-light">Submit Assessment</button>
+      </div>
+    </form>
+  </div>
+ 
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Assessment Result</h4>
+      <h6>Student name: <span id="student-name2" style="text-transform: uppercase;"> </span> </h6>
+      <p id="modal-result-text"></p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.modal');
+      var instances = M.Modal.init(elems);
+    });
+    const currentUrl = window.location.href;
+
+    // Create a URL object
+    const url = new URL(currentUrl);
+
+    // Get the search parameters
+    const params = new URLSearchParams(url.search);
+
+    // Retrieve the 'name' parameter
+    const nameValue = params.get('name');
+
+    // Log the value to the console
+    console.log(nameValue);
+    
+    var nameField = document.getElementById('student-name').innerHTML = nameValue;
+    var nameField = document.getElementById('student-name2').innerHTML = nameValue;
+
+
+    const correctAnswers = {
+      q1: 'a',
+      q2: 'b',
+      q3: 'a',
+      q4: 'b',
+      q5: 'b',
+      q6: 'a',
+      q7: 'b',
+      q8: 'b',
+      q9: 'a',
+      q10: 'a',
+      q11: 'a',
+      q12: 'c',
+      q13: 'd',
+      q14: 'a',
+      q15: 'a',
+      q16: 'b',
+      q17: 'a',
+      q18: 'a',
+      q19: 'a',
+      q20: 'a'
+    };
+
+    document.getElementById('assessmentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let score = 0;
+
+      for (let question in correctAnswers) {
+        const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+        if (selectedOption && selectedOption.value === correctAnswers[question]) {
+          score += 2; // Each question is worth 2 points
+        }
+      }
+
+      const resultText = `Your Score: ${score} out of 40`;
+      const modalResultText = document.getElementById('modal-result-text');
+      modalResultText.innerHTML = `<h5>${resultText}</h5>`;
+      if (score < 15) {
+        modalResultText.innerHTML += '<p>You need to improve.</p>';
+      } else {
+        modalResultText.innerHTML += '<p>Well done!</p>';
+      }
+
+      var instance = M.Modal.getInstance(document.getElementById('modal1'));
+      instance.open();
+    });
+  </script>
+</body>
+</html>
