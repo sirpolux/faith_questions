@@ -4,67 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Java Code Bytes - Entry Assessment</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #f5f5f5;
-    }
-    .container {
-      margin-top: 50px;
-    }
-    .brand-logo {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #2196f3;
-    }
-    .card-content p {
-      font-size: 1.2rem;
-    }
-    .btn {
-      background-color: #2196f3;
-    }
-    .btn:hover {
-      background-color: #1976d2;
     }
   </style>
 </head>
-<body>
+<body class="bg-gray-100 flex flex-col min-h-screen">
 
-  <nav>
-    <div class="nav-wrapper blue">
-      <a href="#" class="brand-logo center">Java Code Bytes</a>
+  <nav class="bg-blue-600">
+    <div class="container mx-auto py-4">
+      <a href="#" class="text-2xl font-bold text-white text-center">Java Code Bytes</a>
     </div>
   </nav>
 
-  <div class="container">
-    <div class="row">
-      <div class="col s12 m10 offset-m1">
-        <div class="card">
-          <div class="card-content">
-            <span class="card-title">Welcome to Java Code Bytes</span>
-            <p>Get started with our Java programming course by taking this entry assessment. This will help us understand your current level and place you in the right course module.</p>
-          </div>
-          <div class="card-action center">
-            <a href="assessment.html" class="btn waves-effect waves-light">Start Assessment</a>
+  <div class="container mx-auto flex-grow mt-10">
+    <div class="flex justify-center">
+      <div class="w-full max-w-md">
+        <div class="bg-white shadow-md rounded-lg p-6">
+          <h2 class="text-xl font-semibold mb-4">Welcome to Java Code Bytes</h2>
+          <p class="text-gray-700 mb-6">Get started with our Java programming course by taking this entry assessment. This will help us understand your current level and place you in the right course module.</p>
+          <div class="flex flex-col space-y-2">
+            <a href="basic_data_types_variables_and_constant.html" class="bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-500 text-center">Basic data types, Varables and constants</a>
+            <a href="operators.html" class="bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-500 text-center">Operators in Java</a>
+            <a href="conditional_statements.html" class="bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-500 text-center">Introduction to conditional statement</a>
+            <a href="introduction-to-loops.html" class="bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-500 text-center">Introduction to Loops in Java</a>
+            <a href="functions.html" class="bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-500 text-center">Introduction to functions in Java</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <footer class="page-footer blue">
-    <div class="container">
-      <div class="row">
-        <div class="col s12 center">
-          <p>&copy; 2024 Java Code Bytes. All rights reserved.</p>
-        </div>
+  <footer class="bg-blue-600 py-4">
+    <div class="container mx-auto text-center text-white">
+      <p>&copy; 2024 Java Code Bytes. All rights reserved.</p>
+      <div class="flex justify-center mt-2 space-x-4 text-3xl">
+        <a href="https://www.linkedin.com/in/machong-paul/" target="_blank" class="text-white"><ion-icon  class="shadow-md rounded-full" name="logo-linkedin"></ion-icon></a>
+        <a href="https://wa.me/07064446227" target="_blank" class="text-white"><ion-icon  class="shadow-md rounded-full" name="logo-whatsapp"></ion-icon></a>
+        <a href="https://www.facebook.com/paul.machong" target="_blank" class="text-white"><ion-icon class="shadow-md rounded-full" name="logo-facebook"></ion-icon></a>
+        <a href="https://github.com" target="_blank" class="text-white"><ion-icon class="shadow-md rounded-full" name="logo-github"></ion-icon></a>
+        <a href="https://twitter.com" target="_blank" class="text-white"><ion-icon class="shadow-md rounded-full" name="logo-twitter"></ion-icon></a>
+        <a href="https://join.skype.com" target="_blank" class="text-white"><ion-icon  class="shadow-md rounded-full" name="logo-skype"></ion-icon></a>
       </div>
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
