@@ -1,347 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conditional Statements Assessment</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-    }
-    .container {
-      margin-top: 20px;
-    }
-    .assessment-title {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .question {
-      margin-bottom: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h4 class="assessment-title">Conditional Statements Assessment</h4>
-    <h5>Student name: <span id="student-name" style="text-transform:uppercase;"> </span></h5>
-    <form id="assessmentForm">
-      <!-- Questions -->
-      <div class="question">
-        <p>1. What will be the output of the following code: <code>if (true) { System.out.println("Hello"); }</code>?</p>
-        <p>
-          <label><input name="q1" type="radio" value="a"/><span>Hello</span></label>
-        </p>
-        <p>
-          <label><input name="q1" type="radio" value="b"/><span>No output</span></label>
-        </p>
-        <p>
-          <label><input name="q1" type="radio" value="c"/><span>Error</span></label>
-        </p>
-        <p>
-          <label><input name="q1" type="radio" value="d"/><span>None</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>2. Which of the following is the correct syntax for an if statement?</p>
-        <p>
-          <label><input name="q2" type="radio" value="a"/><span>if condition { ... }</span></label>
-        </p>
-        <p>
-          <label><input name="q2" type="radio" value="b"/><span>if (condition) ... </span></label>
-        </p>
-        <p>
-          <label><input name="q2" type="radio" value="c"/><span>if (condition) { ... }</span></label>
-        </p>
-        <p>
-          <label><input name="q2" type="radio" value="d"/><span>if { condition } ... </span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>3. What will be the output of the following code: <code>int x = 5; if (x > 3) { System.out.println("Yes"); }</code>?</p>
-        <p>
-          <label><input name="q3" type="radio" value="a"/><span>Yes</span></label>
-        </p>
-        <p>
-          <label><input name="q3" type="radio" value="b"/><span>No</span></label>
-        </p>
-        <p>
-          <label><input name="q3" type="radio" value="c"/><span>Error</span></label>
-        </p>
-        <p>
-          <label><input name="q3" type="radio" value="d"/><span>None</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>4. Which of the following represents a switch statement in Java?</p>
-        <p>
-          <label><input name="q4" type="radio" value="a"/><span>switch (x) { case 1: break; }</span></label>
-        </p>
-        <p>
-          <label><input name="q4" type="radio" value="b"/><span>switch x { case 1: break; }</span></label>
-        </p>
-        <p>
-          <label><input name="q4" type="radio" value="c"/><span>switch (x): case 1: break;</span></label>
-        </p>
-        <p>
-          <label><input name="q4" type="radio" value="d"/><span>switch { x: case 1; break; }</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>5. What will be the output of the following code: <code>int x = 2; switch (x) { case 1: System.out.println("One"); break; case 2: System.out.println("Two"); }</code>?</p>
-        <p>
-          <label><input name="q5" type="radio" value="a"/><span>One</span></label>
-        </p>
-        <p>
-          <label><input name="q5" type="radio" value="b"/><span>Two</span></label>
-        </p>
-        <p>
-          <label><input name="q5" type="radio" value="c"/><span>Error</span></label>
-        </p>
-        <p>
-          <label><input name="q5" type="radio" value="d"/><span>No output</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>6. In which of the following cases would an if-else statement be used?</p>
-        <p>
-          <label><input name="q6" type="radio" value="a"/><span>To check multiple values</span></label>
-        </p>
-        <p>
-          <label><input name="q6" type="radio" value="b"/><span>To perform a simple condition check</span></label>
-        </p>
-        <p>
-          <label><input name="q6" type="radio" value="c"/><span>To check if a value is within a range</span></label>
-        </p>
-        <p>
-          <label><input name="q6" type="radio" value="d"/><span>None of the above</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>7. What will happen if no case matches in a switch statement?</p>
-        <p>
-          <label><input name="q7" type="radio" value="a"/><span>No output</span></label>
-        </p>
-        <p>
-          <label><input name="q7" type="radio" value="b"/><span>Default case will execute if provided</span></label>
-        </p>
-        <p>
-          <label><input name="q7" type="radio" value="c"/><span>It will throw an error</span></label>
-        </p>
-        <p>
-          <label><input name="q7" type="radio" value="d"/><span>Execution will continue to the next case</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>8. Which statement is true about if statements?</p>
-        <p>
-          <label><input name="q8" type="radio" value="a"/><span>Can have multiple else if blocks</span></label>
-        </p>
-        <p>
-          <label><input name="q8" type="radio" value="b"/><span>Must have at least one else block</span></label>
-        </p>
-        <p>
-          <label><input name="q8" type="radio" value="c"/><span>Can only have one condition</span></label>
-        </p>
-        <p>
-          <label><input name="q8" type="radio" value="d"/><span>None of the above</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>9. What is the purpose of the break statement in a switch case?</p>
-        <p>
-          <label><input name="q9" type="radio" value="a"/><span>To terminate the current loop</span></label>
-        </p>
-        <p>
-          <label><input name="q9" type="radio" value="b"/><span>To exit the switch block</span></label>
-        </p>
-        <p>
-          <label><input name="q9" type="radio" value="c"/><span>To continue to the next case</span></label>
-        </p>
-        <p>
-          <label><input name="q9" type="radio" value="d"/><span>To return a value</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>10. Which operator is used in conditional expressions?</p>
-        <p>
-          <label><input name="q10" type="radio" value="a"/><span>:</span></label>
-        </p>
-        <p>
-          <label><input name="q10" type="radio" value="b"/><span>?</span></label>
-        </p>
-        <p>
-          <label><input name="q10" type="radio" value="c"/><span>!</span></label>
-        </p>
-        <p>
-          <label><input name="q10" type="radio" value="d"/><span>==</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>11. How many else if statements can be used in an if-else chain?</p>
-        <p>
-          <label><input name="q11" type="radio" value="a"/><span>Only one</span></label>
-        </p>
-        <p>
-          <label><input name="q11" type="radio" value="b"/><span>Two</span></label>
-        </p>
-        <p>
-          <label><input name="q11" type="radio" value="c"/><span>Multiple</span></label>
-        </p>
-        <p>
-          <label><input name="q11" type="radio" value="d"/><span>None</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>12. What is the output of the following code: <code>int day = 3; switch (day) { case 1: System.out.println("Monday"); break; case 3: System.out.println("Wednesday"); }</code>?</p>
-        <p>
-          <label><input name="q12" type="radio" value="a"/><span>Monday</span></label>
-        </p>
-        <p>
-          <label><input name="q12" type="radio" value="b"/><span>Wednesday</span></label>
-        </p>
-        <p>
-          <label><input name="q12" type="radio" value="c"/><span>Error</span></label>
-        </p>
-        <p>
-          <label><input name="q12" type="radio" value="d"/><span>No output</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>13. What is the output of the following code: <code>int a = 10; if (a < 5) { System.out.println("Low"); } else { System.out.println("High"); }</code>?</p>
-        <p>
-          <label><input name="q13" type="radio" value="a"/><span>Low</span></label>
-        </p>
-        <p>
-          <label><input name="q13" type="radio" value="b"/><span>High</span></label>
-        </p>
-        <p>
-          <label><input name="q13" type="radio" value="c"/><span>Error</span></label>
-        </p>
-        <p>
-          <label><input name="q13" type="radio" value="d"/><span>No output</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>14. Which of the following is a valid default case in a switch statement?</p>
-        <p>
-          <label><input name="q14" type="radio" value="a"/><span>default:</span></label>
-        </p>
-        <p>
-          <label><input name="q14" type="radio" value="b"/><span>default case:</span></label>
-        </p>
-        <p>
-          <label><input name="q14" type="radio" value="c"/><span>default {}</span></label>
-        </p>
-        <p>
-          <label><input name="q14" type="radio" value="d"/><span>default():</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>15. What is the output of the following code: <code>int number = 1; switch (number) { case 1: System.out.println("One"); break; case 2: System.out.println("Two"); }</code>?</p>
-        <p>
-          <label><input name="q15" type="radio" value="a"/><span>One</span></label>
-        </p>
-        <p>
-          <label><input name="q15" type="radio" value="b"/><span>Two</span></label>
-        </p>
-        <p>
-          <label><input name="q15" type="radio" value="c"/><span>Error</span></label>
-        </p>
-        <p>
-          <label><input name="q15" type="radio" value="d"/><span>No output</span></label>
-        </p>
-      </div>
-      <div class="center">
-        <button type="submit" class="btn waves-effect waves-light">Submit Assessment</button>
-      </div>
-    </form>
-  </div>
 
- <!-- Modal Structure -->
- <div id="modal1" class="modal">
-  <div class="modal-content">
-    <h4>Assessment Result</h4>
-    <h6>Student name: <span id="student-name2" style="text-transform: uppercase;"> </span> </h6>
-    <p id="modal-result-text"></p>
-  </div>
-  <div class="modal-footer">
-    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-  </div>
-</div>
+    <div class="container">
+        <h1>Introduction to Conditional Statements</h1>
+        <img src="/images/conditional_statement.png" alt="Test Image">
+        <div>
+            <button class="button" onclick="window.location.href='conditional_statements_theory.html'">Take Objective Test</button>
+            <button class="button" onclick="window.location.href='conditional_statements_practical.html'">Take Practical Test</button>
+        </div>
+    </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.modal');
-      var instances = M.Modal.init(elems);
-    });
-
-
-    const currentUrl = window.location.href;
-
-    // Create a URL object
-    const url = new URL(currentUrl);
-
-    // Get the search parameters
-    const params = new URLSearchParams(url.search);
-
-    // Retrieve the 'name' parameter
-    const nameValue = params.get('name');
-
-    // Log the value to the console
-    console.log(nameValue);
-
-    var nameField = document.getElementById('student-name').innerHTML = nameValue;
-    var nameField = document.getElementById('student-name2').innerHTML = nameValue;
-    const correctAnswers = {
-      q1: 'a',
-      q2: 'c',
-      q3: 'a',
-      q4: 'a',
-      q5: 'b',
-      q6: 'b',
-      q7: 'b',
-      q8: 'a',
-      q9: 'b',
-      q10: 'b',
-      q11: 'c',
-      q12: 'b',
-      q13: 'b',
-      q14: 'a',
-      q15: 'a'
-    };
-
-    document.getElementById('assessmentForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      let score = 0;
-
-      for (let question in correctAnswers) {
-        const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
-        if (selectedOption && selectedOption.value === correctAnswers[question]) {
-          score += 2; // Each question is worth 2 points
-        }
-      }
-
-      const resultText = `Your Score: ${score} out of 30`;
-      const modalResultText = document.getElementById('modal-result-text');
-      modalResultText.innerHTML = `<h5>${resultText}</h5>`;
-      if (score < 15) {
-        modalResultText.innerHTML += '<p>You need to improve.</p>';
-      } else {
-        modalResultText.innerHTML += '<p>Well done!</p>';
-      }
-
-      var instance = M.Modal.getInstance(document.getElementById('modal1'));
-      instance.open();
-
-      const resultMessage = `Your score is: ${score} out of 30.`;
-      document.getElementById('resultMessage').innerText = resultMessage;
-      var instance = M.Modal.getInstance(document.getElementById('resultModal'));
-      instance.open();
-    });
-  </script>
 </body>
 </html>
