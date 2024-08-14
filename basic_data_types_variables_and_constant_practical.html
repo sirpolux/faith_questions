@@ -38,6 +38,12 @@
         .card:hover {
             background-color: #d0e6ff;
         }
+        .correct {
+            border-color: green !important;
+        }
+        .incorrect {
+            border-color: red !important;
+        }
     </style>
 </head>
 <body>
@@ -46,30 +52,61 @@
         
         <div class="topic">
             <h2>Variables</h2>
-            <div class="card" onclick="window.location.href='practical.html?topic=variables&index=0'">
+            <div class="card" id="var0" onclick="window.location.href='practical.html?topic=variables&index=0'">
                 Create a program that declares an integer variable 'age' and assigns it a value of 25. Print the value of 'age'.
             </div>
-            <div class="card" onclick="window.location.href='practical.html?topic=variables&index=1'">
+            <div class="card" id="var1" onclick="window.location.href='practical.html?topic=variables&index=1'">
                 Create a program that declares a String variable 'name' and assigns it your name. Print the value of 'name'.
             </div>
         </div>
 
         <div class="topic">
             <h2>Data Types</h2>
-            <div class="card" onclick="window.location.href='practical.html?topic=data_types&index=0'">
+            <div class="card" id="dt0" onclick="window.location.href='practical.html?topic=data_types&index=0'">
                 Write a program that declares a double variable 'price' and assigns it a value of 19.99. Print the value of 'price'.
             </div>
-            <div class="card" onclick="window.location.href='practical.html?topic=data_types&index=1'">
+            <div class="card" id="dt1" onclick="window.location.href='practical.html?topic=data_types&index=1'">
                 Write a program that declares a float variable 'height' and assigns it a value of 5.9. Print the value of 'height'.
             </div>
         </div>
 
         <div class="topic">
             <h2>Constants</h2>
-            <div class="card" onclick="window.location.href='practical.html?topic=constants&index=0'">
+            <div class="card" id="c0" onclick="window.location.href='practical.html?topic=constants&index=0'">
                 Define a constant named 'PI' with a value of 3.14. Print the value of 'PI'.
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Set sample values for testing
+            localStorage.setItem('variables_0', 'true');   // Question 1 under Variables answered correctly
+            localStorage.setItem('variables_1', 'false');  // Question 2 under Variables answered incorrectly
+            localStorage.setItem('data_types_0', 'true');   // Question 1 under Data Types answered correctly
+            localStorage.setItem('data_types_1', 'true');   // Question 2 under Data Types answered correctly
+            localStorage.setItem('constants_0', 'false');    // Question 1 under Constants answered incorrectly
+
+            // Apply styles based on localStorage values
+            const questions = [
+                { topic: 'variables', index: 0 }, // var0
+                { topic: 'variables', index: 1 }, // var1
+                { topic: 'data_types', index: 0 }, // dt0
+                { topic: 'data_types', index: 1 }, // dt1
+                { topic: 'constants', index: 0 }   // c0
+            ];
+
+            questions.forEach(q => {
+                const key = `${q.topic}_${q.index}`;
+                const card = document.getElementById(q.topic[0] + q.index); // e.g., var0
+
+                if (localStorage.getItem(key) === 'true') {
+                    card.classList.add('correct');
+                } else if (localStorage.getItem(key) === 'false') {
+                    card.classList.add('incorrect');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
