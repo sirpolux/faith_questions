@@ -1,343 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Basic Datatypes, Variables, and Constants Assessment</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-    }
-    .container {
-      margin-top: 20px;
-    }
-    .assessment-title {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .question {
-      margin-bottom: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro-learning for Java Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .topic {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .card {
+            background-color: #e7f1ff;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .card:hover {
+            background-color: #d0e6ff;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h4 class="assessment-title">Basic Datatypes, Variables, and Constants Assessment</h4>
-    <h5>Student name: <span id="student-name" style="text-transform:uppercase;"> </span></h5>
-    <form id="assessmentForm">
-      <!-- Data Types Questions -->
-      <div class="question">
-        <p>1. Which of the following is a primitive data type in Java?</p>
-        <p>
-          <label><input name="q1" type="radio" value="a"/><span>String</span></label>
-        </p>
-        <p>
-          <label><input name="q1" type="radio" value="b"/><span>int</span></label>
-        </p>
-        <p>
-          <label><input name="q1" type="radio" value="c"/><span>ArrayList</span></label>
-        </p>
-        <p>
-          <label><input name="q1" type="radio" value="d"/><span>HashMap</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>2. What is the size of an int data type in Java?</p>
-        <p>
-          <label><input name="q2" type="radio" value="a"/><span>4 bytes</span></label>
-        </p>
-        <p>
-          <label><input name="q2" type="radio" value="b"/><span>2 bytes</span></label>
-        </p>
-        <p>
-          <label><input name="q2" type="radio" value="c"/><span>8 bytes</span></label>
-        </p>
-        <p>
-          <label><input name="q2" type="radio" value="d"/><span>1 byte</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>3. Which data type is used to store decimal numbers in Java?</p>
-        <p>
-          <label><input name="q3" type="radio" value="a"/><span>int</span></label>
-        </p>
-        <p>
-          <label><input name="q3" type="radio" value="b"/><span>float</span></label>
-        </p>
-        <p>
-          <label><input name="q3" type="radio" value="c"/><span>char</span></label>
-        </p>
-        <p>
-          <label><input name="q3" type="radio" value="d"/><span>boolean</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>4. Which of the following can be used to declare a constant in Java?</p>
-        <p>
-          <label><input name="q4" type="radio" value="a"/><span>const</span></label>
-        </p>
-        <p>
-          <label><input name="q4" type="radio" value="b"/><span>static</span></label>
-        </p>
-        <p>
-          <label><input name="q4" type="radio" value="c"/><span>final</span></label>
-        </p>
-        <p>
-          <label><input name="q4" type="radio" value="d"/><span>immutable</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>5. Which of the following is the default value of a boolean variable in Java?</p>
-        <p>
-          <label><input name="q5" type="radio" value="a"/><span>true</span></label>
-        </p>
-        <p>
-          <label><input name="q5" type="radio" value="b"/><span>false</span></label>
-        </p>
-        <p>
-          <label><input name="q5" type="radio" value="c"/><span>null</span></label>
-        </p>
-        <p>
-          <label><input name="q5" type="radio" value="d"/><span>0</span></label>
-        </p>
-      </div>
-      <!-- Variables Questions -->
-      <div class="question">
-        <p>6. Which keyword is used to declare a variable in Java?</p>
-        <p>
-          <label><input name="q6" type="radio" value="a"/><span>declare</span></label>
-        </p>
-        <p>
-          <label><input name="q6" type="radio" value="b"/><span>var</span></label>
-        </p>
-        <p>
-          <label><input name="q6" type="radio" value="c"/><span>int</span></label>
-        </p>
-        <p>
-          <label><input name="q6" type="radio" value="d"/><span>create</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>7. Which of the following is a correct variable declaration in Java?</p>
-        <p>
-          <label><input name="q7" type="radio" value="a"/><span>int 1x;</span></label>
-        </p>
-        <p>
-          <label><input name="q7" type="radio" value="b"/><span>float y;</span></label>
-        </p>
-        <p>
-          <label><input name="q7" type="radio" value="c"/><span>double @value;</span></label>
-        </p>
-        <p>
-          <label><input name="q7" type="radio" value="d"/><span>char #letter;</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>8. Which of the following is a valid identifier in Java?</p>
-        <p>
-          <label><input name="q8" type="radio" value="a"/><span>123abc</span></label>
-        </p>
-        <p>
-          <label><input name="q8" type="radio" value="b"/><span>_name</span></label>
-        </p>
-        <p>
-          <label><input name="q8" type="radio" value="c"/><span>@value</span></label>
-        </p>
-        <p>
-          <label><input name="q8" type="radio" value="d"/><span>new</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>9. What is the default value of an int variable in Java?</p>
-        <p>
-          <label><input name="q9" type="radio" value="a"/><span>0</span></label>
-        </p>
-        <p>
-          <label><input name="q9" type="radio" value="b"/><span>null</span></label>
-        </p>
-        <p>
-          <label><input name="q9" type="radio" value="c"/><span>undefined</span></label>
-        </p>
-        <p>
-          <label><input name="q9" type="radio" value="d"/><span>1</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>10. Which of the following variable declarations is correct for a boolean type?</p>
-        <p>
-          <label><input name="q10" type="radio" value="a"/><span>boolean flag = true;</span></label>
-        </p>
-        <p>
-          <label><input name="q10" type="radio" value="b"/><span>bool flag = true;</span></label>
-        </p>
-        <p>
-          <label><input name="q10" type="radio" value="c"/><span>Boolean flag = "true";</span></label>
-        </p>
-        <p>
-          <label><input name="q10" type="radio" value="d"/><span>boolean flag = "true";</span></label>
-        </p>
-      </div>
-      <!-- Arrays Questions -->
-      <div class="question">
-        <p>11. How do you declare an array of integers in Java?</p>
-        <p>
-          <label><input name="q11" type="radio" value="a"/><span>int arr[];</span></label>
-        </p>
-        <p>
-          <label><input name="q11" type="radio" value="b"/><span>int arr[5];</span></label>
-        </p>
-        <p>
-          <label><input name="q11" type="radio" value="c"/><span>int arr() = new int[5];</span></label>
-        </p>
-        <p>
-          <label><input name="q11" type="radio" value="d"/><span>int arr = new int[5];</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>12. How do you access the first element of an array named arr in Java?</p>
-        <p>
-          <label><input name="q12" type="radio" value="a"/><span>arr(1)</span></label>
-        </p>
-        <p>
-          <label><input name="q12" type="radio" value="b"/><span>arr[0]</span></label>
-        </p>
-        <p>
-          <label><input name="q12" type="radio" value="c"/><span>arr[1]</span></label>
-        </p>
-        <p>
-          <label><input name="q12" type="radio" value="d"/><span>arr(0)</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>13. What is the default value of the elements in an array of type int in Java?</p>
-        <p>
-          <label><input name="q13" type="radio" value="a"/><span>0</span></label>
-        </p>
-        <p>
-          <label><input name="q13" type="radio" value="b"/><span>null</span></label>
-        </p>
-        <p>
-          <label><input name="q13" type="radio" value="c"/><span>undefined</span></label>
-        </p>
-        <p>
-          <label><input name="q13" type="radio" value="d"/><span>-1</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>14. Which method is used to get the length of an array in Java?</p>
-        <p>
-          <label><input name="q14" type="radio" value="a"/><span>length()</span></label>
-        </p>
-        <p>
-          <label><input name="q14" type="radio" value="b"/><span>size()</span></label>
-        </p>
-        <p>
-          <label><input name="q14" type="radio" value="c"/><span>getSize()</span></label>
-        </p>
-        <p>
-          <label><input name="q14" type="radio" value="d"/><span>length</span></label>
-        </p>
-      </div>
-      <div class="question">
-        <p>15. How do you declare a multidimensional array in Java?</p>
-        <p>
-          <label><input name="q15" type="radio" value="a"/><span>int arr[][];</span></label>
-        </p>
-        <p>
-          <label><input name="q15" type="radio" value="b"/><span>int arr = new int[][];</span></label>
-        </p>
-        <p>
-          <label><input name="q15" type="radio" value="c"/><span>int[][] arr;</span></label>
-        </p>
-        <p>
-          <label><input name="q15" type="radio" value="d"/><span>int arr()();</span></label>
-        </p>
-      </div>
-      <button type="submit" class="btn waves-effect waves-light">Submit</button>
-    </form>
-  </div>
+    <div class="container">
+        <h1>Micro-learning for Java Code</h1>
+        
+        <div class="topic">
+            <h2>Variables</h2>
+            <div class="card" onclick="window.location.href='practical.html?topic=variables&index=0'">
+                Create a program that declares an integer variable 'age' and assigns it a value of 25. Print the value of 'age'.
+            </div>
+            <div class="card" onclick="window.location.href='practical.html?topic=variables&index=1'">
+                Create a program that declares a String variable 'name' and assigns it your name. Print the value of 'name'.
+            </div>
+        </div>
 
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Assessment Result</h4>
-      <h6>Student name: <span id="student-name2" style="text-transform: uppercase;"> </span> </h6>
-      <p id="modal-result-text"></p>
+        <div class="topic">
+            <h2>Data Types</h2>
+            <div class="card" onclick="window.location.href='practical.html?topic=data_types&index=0'">
+                Write a program that declares a double variable 'price' and assigns it a value of 19.99. Print the value of 'price'.
+            </div>
+            <div class="card" onclick="window.location.href='practical.html?topic=data_types&index=1'">
+                Write a program that declares a float variable 'height' and assigns it a value of 5.9. Print the value of 'height'.
+            </div>
+        </div>
+
+        <div class="topic">
+            <h2>Constants</h2>
+            <div class="card" onclick="window.location.href='practical.html?topic=constants&index=0'">
+                Define a constant named 'PI' with a value of 3.14. Print the value of 'PI'.
+            </div>
+        </div>
     </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.modal');
-      var instances = M.Modal.init(elems);
-    });
-
-        // Get the current URL
-    const currentUrl = window.location.href;
-
-    // Create a URL object
-    const url = new URL(currentUrl);
-
-    // Get the search parameters
-    const params = new URLSearchParams(url.search);
-
-    // Retrieve the 'name' parameter
-    const nameValue = params.get('name');
-
-    // Log the value to the console
-    console.log(nameValue);
-    
-    var nameField = document.getElementById('student-name').innerHTML = nameValue;
-    var nameField = document.getElementById('student-name2').innerHTML = nameValue;
-
-    document.getElementById('assessmentForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      
-      const answers = {
-        q1: 'b',
-        q2: 'a',
-        q3: 'b',
-        q4: 'c',
-        q5: 'b',
-        q6: 'c',
-        q7: 'b',
-        q8: 'b',
-        q9: 'a',
-        q10: 'a',
-        q11: 'a',
-        q12: 'b',
-        q13: 'a',
-        q14: 'd',
-        q15: 'c'
-      };
-
-      let score = 0;
-      const form = new FormData(event.target);
-      for (const [question, answer] of form.entries()) {
-        if (answers[question] === answer) {
-          score += 2; // Each correct answer gives 2 points
-        }
-      }
-
-      const resultText = `Your Score: ${score} out of 30`;
-      const modalResultText = document.getElementById('modal-result-text');
-      modalResultText.innerHTML = `<h5>${resultText}</h5>`;
-      if (score < 15) {
-        modalResultText.innerHTML += '<p>You need to improve.</p>';
-      } else {
-        modalResultText.innerHTML += '<p>Well done!</p>';
-      }
-
-      var instance = M.Modal.getInstance(document.getElementById('modal1'));
-      instance.open();
-    });
-  </script>
 </body>
 </html>
