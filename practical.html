@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro Learning for Java Code</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
+    <style>
+        /* Custom styles */
+        body {
+            background-color: #f9fafb; /* Tailwind's gray-100 */
+        }
+        .CodeMirror {
+            height: auto;
+            border: 1px solid #ddd;
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="bg-white shadow-md rounded-lg p-8 max-w-lg w-full">
+            <h1 class="text-2xl font-bold text-center text-gray-800">Micro Learning for Java Code</h1>
+            <div class="question mt-6 text-lg font-semibold text-gray-700" id="question"></div>
+            <textarea  id="code" name="code" placeholder="Enter your code here..." class="mt-4 w-full h-32 p-2 border rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+public class{
+    public static void main(String[] args){
+        //Type your code below this line
+    }
+}
+        </textarea>
+            <div><button class="mt-2 bg-green-500 text-white rounded-full px-8 py-1">execute</button></div>
+        </div>
+       
+    </div>
+
+    <script>
+        // JSON data
+        const jsonData = {
+    "variables": [
+        {
+            "question": "Create a program that declares an integer variable 'age' and assigns it a value of 25. Print the value of 'age'.",
+            "expected_input": "No input required.",
+            "expected_output": "25",
+            "sample_code": "int age = 25;\nSystem.out.println(age);",
+            "expected_keyword": [
+                "int",
+                "age",
+                "25",
+                "System.out.println"
+            ]
+        },
+        {
+            "question": "Create a program that declares a String variable 'name' and assigns it your name. Print the value of 'name'.",
+            "expected_input": "No input required.",
+            "expected_output": "<Your Name>",
+            "sample_code": "String name = \"Your Name\";\nSystem.out.println(name);",
+            "expected_keyword": [
+                "String",
+                "name",
+                "<Your Name>",
+                "System.out.println"
+            ]
+        }
+    ],
+    "data_types": [
+        {
+            "question": "Write a program that declares a double variable 'price' and assigns it a value of 19.99. Print the value of 'price'.",
+            "expected_input": "No input required.",
+            "expected_output": "19.99",
+            "sample_code": "double price = 19.99;\nSystem.out.println(price);",
+            "expected_keyword": [
+                "double",
+                "price",
+                "19.99",
+                "System.out.println"
+            ]
+        },
+        {
+            "question": "Write a program that declares a float variable 'height' and assigns it a value of 5.9. Print the value of 'height'.",
+            "expected_input": "No input required.",
+            "expected_output": "5.9",
+            "sample_code": "float height = 5.9f;\nSystem.out.println(height);",
+            "expected_keyword": [
+                "float",
+                "height",
+                "5.9",
+                "System.out.println"
+            ]
+        }
+    ],
+    "constants": [
+        {
+            "question": "Define a constant named 'PI' with a value of 3.14. Print the value of 'PI'.",
+            "expected_input": "No input required.",
+            "expected_output": "3.14",
+            "sample_code": "final double PI = 3.14;\nSystem.out.println(PI);",
+            "expected_keyword": [
+                "final",
+                "PI",
+                "3.14",
+                "System.out.println"
+            ]
+        }
+    ],
+
+    
+    "conditional_statements": [
+        {
+            "question": "Write a program that checks if a number is positive, negative, or zero. Declare an integer variable 'number' and assign it a value of 10. Print whether the number is positive, negative, or zero.",
+            "expected_input": "No input required.",
+            "expected_output": "Positive",
+            "sample_code": "int number = 10;\nif (number > 0) {\n    System.out.println(\"Positive\");\n} else if (number < 0) {\n    System.out.println(\"Negative\");\n} else {\n    System.out.println(\"Zero\");\n}",
+            "expected_keyword": [
+                "int",
+                "number",
+                "10",
+                "if",
+                "else",
+                "System.out.println"
+            ]
+        },
+        {
+            "question": "Create a program that determines if a given year is a leap year. Declare an integer variable 'year' and assign it a value of 2024. Print 'Leap Year' if it is a leap year, otherwise print 'Not a Leap Year'.",
+            "expected_input": "No input required.",
+            "expected_output": "Leap Year",
+            "sample_code": "int year = 2024;\nif ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {\n    System.out.println(\"Leap Year\");\n} else {\n    System.out.println(\"Not a Leap Year\");\n}",
+            "expected_keyword": [
+                "int",
+                "year",
+                "2024",
+                "if",
+                "else",
+                "System.out.println"
+            ]
+        },
+        {
+            "question": "Write a program that takes a grade (integer) and prints 'Pass' if the grade is 50 or above, and 'Fail' otherwise. Declare an integer variable 'grade' and assign it a value of 65.",
+            "expected_input": "No input required.",
+            "expected_output": "Pass",
+            "sample_code": "int grade = 65;\nif (grade >= 50) {\n    System.out.println(\"Pass\");\n} else {\n    System.out.println(\"Fail\");\n}",
+            "expected_keyword": [
+                "int",
+                "grade",
+                "65",
+                "if",
+                "else",
+                "System.out.println"
+            ]
+        },
+        {
+            "question": "Create a program that checks the value of an integer variable 'score' and prints 'Excellent' if the score is above 90, 'Good' if the score is between 75 and 90, and 'Needs Improvement' otherwise. Declare 'score' and assign it a value of 85.",
+            "expected_input": "No input required.",
+            "expected_output": "Good",
+            "sample_code": "int score = 85;\nif (score > 90) {\n    System.out.println(\"Excellent\");\n} else if (score >= 75) {\n    System.out.println(\"Good\");\n} else {\n    System.out.println(\"Needs Improvement\");\n}",
+            "expected_keyword": [
+                "int",
+                "score",
+                "85",
+                "if",
+                "else",
+                "System.out.println"
+            ]
+        },
+        {
+            "question": "Write a program that checks if a character (char) is a vowel or a consonant. Declare a char variable 'letter' and assign it a value of 'A'. Print 'Vowel' if it is a vowel, otherwise print 'Consonant'.",
+            "expected_input": "No input required.",
+            "expected_output": "Vowel",
+            "sample_code": "char letter = 'A';\nif (letter == 'A' || letter == 'E' || letter == 'I' || letter == 'O' || letter == 'U' ||\n    letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u') {\n    System.out.println(\"Vowel\");\n} else {\n    System.out.println(\"Consonant\");\n}",
+            "expected_keyword": [
+                "char",
+                "letter",
+                "'A'",
+                "if",
+                "else",
+                "System.out.println"
+            ]
+        }
+    ],
+    "operators": [
+        {
+            "question": "Write a program that declares two integer variables, 'a' and 'b', and assigns them values of 10 and 20, respectively. Calculate and print the sum of 'a' and 'b'.",
+            "expected_input": "No input required.",
+            "expected_output": "30",
+            "sample_code": "int a = 10;\nint b = 20;\nint sum = a + b;\nSystem.out.println(sum);",
+            "expected_keyword": [
+                "int",
+                "a",
+                "10",
+                "b",
+                "20",
+                "+",
+                "System.out.println"
+            ]
+        },
+        {
+            "question": "Create a program that declares two double variables, 'x' and 'y', and assigns them values of 5.5 and 2.5, respectively. Calculate and print the result of 'x' divided by 'y'.",
+            "expected_input": "No input required.",
+            "expected_output": "2.2",
+            "sample_code": "double x = 5.5;\ndouble y = 2.5;\ndouble result = x / y;\nSystem.out.println(result);",
+            "expected_keyword": [
+                "double",
+                "x",
+                "5.5",
+                "y",
+                "2.5",
+                "/",
+                "System.out.println"
+            ]
+        },
+        {
+            "question": "Write a program that uses relational operators to compare two integers, 'num1' and 'num2'. Assign them values of 15 and 10, respectively. Print 'num1 is greater' if 'num1' is greater than 'num2', otherwise print 'num1 is not greater'.",
+            "expected_input": "No input required.",
+            "expected_output": "num1 is greater",
+            "sample_code": "int num1 = 15;\nint num2 = 10;\nif (num1 > num2) {\n    System.out.println(\"num1 is greater\");\n} else {\n    System.out.println(\"num1 is not greater\");\n}",
+            "expected_keyword": [
+                "int",
+                "num1",
+                "15",
+                "num2",
+                "10",
+                "if",
+                ">",
+                "System.out.println"
+            ]
+        },
+        {
+            "question": "Create a program that declares a boolean variable 'isSunny' and assigns it a value of true. Use a logical operator to check if 'isSunny' is true and print 'It's a sunny day!' if it is true.",
+            "expected_input": "No input required.",
+            "expected_output": "It's a sunny day!",
+            "sample_code": "boolean isSunny = true;\nif (isSunny) {\n    System.out.println(\"It's a sunny day!\");\n}",
+            "expected_keyword": [
+                "boolean",
+                "isSunny",
+                "true",
+                "if",
+                "System.out.println"
+            ]
+        },
+        {
+            "question": "Write a program that declares an integer variable 'score' and assigns it a value of 85. Use the ternary operator to print 'Pass' if 'score' is greater than or equal to 50, and 'Fail' otherwise.",
+            "expected_input": "No input required.",
+            "expected_output": "Pass",
+            "sample_code": "int score = 85;\nString result = (score >= 50) ? \"Pass\" : \"Fail\";\nSystem.out.println(result);",
+            "expected_keyword": [
+                "int",
+                "score",
+                "85",
+                "?",
+                ":",
+                "System.out.println"
+            ]
+        }
+    ],
+    "loops": [
+        {
+            "question": "Write a program that uses a for loop to print the numbers from 1 to 5.",
+            "expected_input": "No input required.",
+            "expected_output": "1\n2\n3\n4\n5",
+            "sample_code": "for (int i = 1; i <= 5; i++) {\n    System.out.println(i);\n}",
+            "expected_keyword": [
+                "for",
+                "int",
+                "i",
+                "1",
+                "<=",
+                "5",
+                "System.out.println"
+            ]
+        },
+        {
+            "question": "Create a program that uses a while loop to print the numbers from 1 to 5.",
+            "expected_input": "No input required.",
+            "expected_output": "1\n2\n3\n4\n5",
+            "sample_code": "int i = 1;\nwhile (i <= 5) {\n    System.out.println(i);\n    i++;\n}",
+            "expected_keyword": [
+                "int",
+                "i",
+                "1",
+                "while",
+                "<=",
+                "5",
+                "System.out.println",
+                "i++"
+            ]
+        },
+        {
+            "question": "Write a program that uses a do while loop to print the numbers from 1 to 5.",
+            "expected_input": "No input required.",
+            "expected_output": "1\n2\n3\n4\n5",
+            "sample_code": "int i = 1;\ndo {\n    System.out.println(i);\n    i++;\n} while (i <= 5);",
+            "expected_keyword": [
+                "int",
+                "i",
+                "1",
+                "do",
+                "System.out.println",
+                "i++",
+                "while",
+                "<=",
+                "5"
+            ]
+        },
+        {
+            "question": "Write a program that calculates the sum of the first 10 natural numbers using a for loop. Print the result.",
+            "expected_input": "No input required.",
+            "expected_output": "55",
+            "sample_code": "int sum = 0;\nfor (int i = 1; i <= 10; i++) {\n    sum += i;\n}\nSystem.out.println(sum);",
+            "expected_keyword": [
+                "int",
+                "sum",
+                "0",
+                "for",
+                "i",
+                "1",
+                "<=",
+                "10",
+                "+=",
+                "System.out.println"
+            ]
+        },
+        {
+            "question": "Create a program that uses a while loop to count down from 5 to 1 and prints each number.",
+            "expected_input": "No input required.",
+            "expected_output": "5\n4\n3\n2\n1",
+            "sample_code": "int count = 5;\nwhile (count > 0) {\n    System.out.println(count);\n    count--;\n}",
+            "expected_keyword": [
+                "int",
+                "count",
+                "5",
+                "while",
+                ">",
+                "0",
+                "System.out.println",
+                "count--"
+            ]
+        },
+        {
+            "question": "Write a program that uses a do while loop to print the even numbers from 2 to 20.",
+            "expected_input": "No input required.",
+            "expected_output": "2\n4\n6\n8\n10\n12\n14\n16\n18\n20",
+            "sample_code": "int i = 2;\ndo {\n    System.out.println(i);\n    i += 2;\n} while (i <= 20);",
+            "expected_keyword": [
+                "int",
+                "i",
+                "2",
+                "do",
+                "System.out.println",
+                "i += 2",
+                "while",
+                "<=",
+                "20"
+            ]
+        }
+    ],
+    "functions": [
+        {
+            "question": "Write a program that defines a function 'add' which takes two integers as parameters and returns their sum. Call the function with the values 10 and 5 and print the result.",
+            "expected_input": "No input required.",
+            "expected_output": "15",
+            "sample_code": "int add(int a, int b) {\n    return a + b;\n}\n\nint result = add(10, 5);\nSystem.out.println(result);",
+            "expected_keyword": [
+                "int",
+                "add",
+                "int",
+                "a",
+                "int",
+                "b",
+                "return",
+                "a + b",
+                "System.out.println"
+            ]
+        },
+        {
+            "question": "Create a program that defines a function 'greet' which takes a String parameter 'name' and prints a greeting message. Call the function with the value 'Alice'.",
+            "expected_input": "No input required.",
+            "expected_output": "Hello, Alice!",
+            "sample_code": "void greet(String name) {\n    System.out.println(\"Hello, \" + name + \"!\");\n}\n\ngreet(\"Alice\");",
+            "expected_keyword": [
+                "void",
+                "greet",
+                "String",
+                "name",
+                "System.out.println",
+                "\"Hello, \"",
+                "\"Alice!\""
+            ]
+        },
+        {
+            "question": "Write a program that defines a function 'square' which takes a double parameter and returns its square. Call the function with the value 4.5 and print the result.",
+            "expected_input": "No input required.",
+            "expected_output": "20.25",
+            "sample_code": "double square(double num) {\n    return num * num;\n}\n\ndouble result = square(4.5);\nSystem.out.println(result);",
+            "expected_keyword": [
+                "double",
+                "square",
+                "double",
+                "num",
+                "return",
+                "num * num",
+                "System.out.println"
+            ]
+        },
+        {
+            "question": "Create a program that defines a function 'max' which takes three integers as parameters and returns the maximum value among them. Call the function with the values 10, 20, and 15 and print the result.",
+            "expected_input": "No input required.",
+            "expected_output": "20",
+            "sample_code": "int max(int a, int b, int c) {\n    return Math.max(a, Math.max(b, c));\n}\n\nint result = max(10, 20, 15);\nSystem.out.println(result);",
+            "expected_keyword": [
+                "int",
+                "max",
+                "int",
+                "a",
+                "int",
+                "b",
+                "int",
+                "c",
+                "return",
+                "Math.max",
+                "System.out.println"
+            ]
+        },
+        {
+            "question": "Write a program that defines a function 'isEven' which takes an integer parameter and returns true if the number is even, false otherwise. Call the function with the value 8 and print the result.",
+            "expected_input": "No input required.",
+            "expected_output": "true",
+            "sample_code": "boolean isEven(int num) {\n    return num % 2 == 0;\n}\n\nboolean result = isEven(8);\nSystem.out.println(result);",
+            "expected_keyword": [
+                "boolean",
+                "isEven",
+                "int",
+                "num",
+                "return",
+                "%",
+                "2",
+                "==",
+                "0",
+                "System.out.println"
+            ]
+        },
+        {
+            "question": "Create a program that demonstrates method overloading by defining two functions named 'multiply': one that takes two integers and another that takes three integers. Print the results of both.",
+            "expected_input": "No input required.",
+            "expected_output": "15\n60",
+            "sample_code": "int multiply(int a, int b) {\n    return a * b;\n}\n\nint multiply(int a, int b, int c) {\n    return a * b * c;\n}\n\nint result1 = multiply(3, 5);\nint result2 = multiply(2, 3, 10);\nSystem.out.println(result1);\nSystem.out.println(result2);",
+            "expected_keyword": [
+                "int",
+                "multiply",
+                "int",
+                "a",
+                "int",
+                "b",
+                "return",
+                "*",
+                "System.out.println"
+            ]
+        }
+    ]
+};
+
+        // Function to extract the question based on the URL
+        function getQuestionFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const topic = urlParams.get('topic');
+            const index = parseInt(urlParams.get('index')) || 0;
+
+            if (topic && jsonData[topic]) {
+                return jsonData[topic][index].question;
+            }
+            return "No question found for the specified topic.";
+        }
+
+        // Display the question
+        document.getElementById('question').innerText = getQuestionFromUrl();
+    </script>
+     <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+            lineNumbers: true,
+            mode: "javascript",
+            theme: "default",
+        });
+    </script>
+</body>
+</html>
