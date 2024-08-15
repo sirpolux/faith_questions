@@ -17,24 +17,38 @@
             height: auto;
             border: 1px solid #ddd;
         }
-    </style>
+        @media (max-width: 640px) { /* Mobile view */
+            .assessment-container {
+                max-width: 100%;
+                padding: 16px; /* Adjust padding for smaller screens */
+            }
+            textarea {
+                height: 150px; /* Set height for mobile */
+            }
+        }
+        @media (min-width: 640px) { /* Desktop view */
+            textarea {
+                height: 300px; /* Set height for desktop */
+            }
+        }
     </style>
 </head>
 <body>
     <div class="flex items-center justify-center min-h-screen">
-        <div class="bg-white shadow-md rounded-lg p-8 max-w-lg w-full">
+        <div class="bg-white shadow-md rounded-lg p-8 assessment-container max-w-lg w-full">
             <h1 class="text-2xl font-bold text-center text-gray-800">Micro Learning for Java Code</h1>
             <div class="question mt-6 text-lg font-semibold text-gray-700" id="question"></div>
-            <textarea  id="code" name="code" placeholder="Enter your code here..." class="mt-4 w-full h-32 p-2 border rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+            <textarea id="code" name="code" placeholder="Enter your code here..." class="mt-4 w-full p-2 border rounded-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
 public class{
     public static void main(String[] args){
         //Type your code below this line
     }
 }
-        </textarea>
-            <div><button class="mt-2 bg-green-500 text-white rounded-full px-8 py-1">execute</button></div>
+            </textarea>
+            <div>
+                <button class="mt-2 bg-green-500 text-white rounded-full px-8 py-1">Execute</button>
+            </div>
         </div>
-       
     </div>
 
     <script>
@@ -476,7 +490,7 @@ public class{
         // Display the question
         document.getElementById('question').innerText = getQuestionFromUrl();
     </script>
-     <script>
+    <script>
         var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
             lineNumbers: true,
             mode: "javascript",
