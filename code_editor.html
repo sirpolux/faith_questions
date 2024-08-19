@@ -51,12 +51,12 @@
             cursor: pointer;
         }
 
-        /* Button style */
+        /* Button styles */
         .modal-button {
             background-color: #4CAF50;
             color: white;
             padding: 10px 20px;
-            margin: 20px 0;
+            margin: 20px 10px;
             border: none;
             cursor: pointer;
             border-radius: 5px;
@@ -68,16 +68,33 @@
     </style>
 </head>
 <body>
-    <textarea id="code" name="code">console.log('Hello, world!');</textarea>
+    <textarea id="code" name="code">
+public class MainClass {
+    public static void main(String[] args) {
+        // Your code goes here
+        System.out.println("Hello, world!");
+    }
+}
+    </textarea>
     
     <!-- The Modal -->
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Please click the link below. You will be redirected to a new page. On that page, click the button with the text <b>"Request temporary acess to the demo server."</b>  After this is open, navigate back to the assessment to continue. You only need to do this once every time you open the app.</p>
-            <a href="https://cors-anywhere.herokuapp.com/corsdemo" target="_blank" class="modal-button" id="corsLink">Go to CORS Page</a>
+            <p>Please click the link below. You will be redirected to a new page. On that page, click the button with the text "Request temporary access tp the demo server." After this is open, navigate back to the assessment to continue. You only need to do this once every time you open the app.</p>
+            <a href="https://cors-anywhere.herokuapp.com/corsdemo" target="" class="modal-button" id="corsLink">Go to CORS Page</a>
+            <button class="modal-button" id="refreshButton">Refresh</button>
         </div>
     </div>
+
+    <button class="modal-button" id="runCodeButton">Run Code</button>
+    <div style="padding-left: 20px;">
+        <h4>Response</h3>
+        <pre id="output"></pre>
+    </div>
+    
+
+    </pre>
 
     <script>
         // Initialize default values for cors_initiated and cors_activated
@@ -134,6 +151,36 @@
         // When the user clicks the link in the modal, set cors_initiated to true
         document.getElementById('corsLink').onclick = function() {
             localStorage.setItem('cors_initiated', 'true');
+        }
+
+        // When the user clicks the Refresh button, reload the page
+        document.getElementById('refreshButton').onclick = function() {
+            location.reload();
+        }
+
+        // Run code when the "Run Code" button is clicked
+        document.getElementById('runCodeButton').onclick = async function() {
+            const code = editor.getValue();
+            console.log(code);
+            try {
+                const response = await fetch('https://cors-anywhere.herokuapp.com/https://api.jdoodle.com/v1/execute', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        clientId: 'dfc516f77cbf3cb7fbb3142c6ba2fcae',
+                        clientSecret: '507e4abf1f5d15f81186405de655b8a9c29c8b645477a92bf417271ae1a1665',
+                        script: code,
+                        language: 'java',
+                        versionIndex: '0',
+                    }),
+                });
+                const result = await response.json();
+                document.getElementById('output').textContent = result.output;
+            } catch (error) {
+                document.getElementById('output').textContent = 'An error occurred: ' + error.message;
+            }
         }
     </script>
 </body>
