@@ -12,16 +12,129 @@
             height: auto;
             border: 1px solid #ddd;
         }
+
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+            text-align: center;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Button style */
+        .modal-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .modal-button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
     <textarea id="code" name="code">console.log('Hello, world!');</textarea>
+    
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Please click the link below. You will be redirected to a new page. On that page, click the button with the text <b>"Request temporary acess to the demo server."</b>  After this is open, navigate back to the assessment to continue. You only need to do this once every time you open the app.</p>
+            <a href="https://cors-anywhere.herokuapp.com/corsdemo" target="_blank" class="modal-button" id="corsLink">Go to CORS Page</a>
+        </div>
+    </div>
+
     <script>
+        // Initialize default values for cors_initiated and cors_activated
+        if (localStorage.getItem('cors_initiated') === null) {
+            localStorage.setItem('cors_initiated', 'false');
+        }
+        if (localStorage.getItem('cors_activated') === null) {
+            localStorage.setItem('cors_activated', 'false');
+        }
+
         var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
             lineNumbers: true,
             mode: "javascript",
             theme: "default",
         });
+
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // Show modal based on local storage values
+        function checkCorsStatus() {
+            var corsActivated = localStorage.getItem('cors_activated') === 'true';
+            var corsInitiated = localStorage.getItem('cors_initiated') === 'true';
+
+            if (!corsActivated) {
+                if (corsInitiated) {
+                    // Set cors_activated to true and cors_initiated to false
+                    localStorage.setItem('cors_activated', 'true');
+                    localStorage.setItem('cors_initiated', 'false');
+                } else {
+                    // Show the modal if CORS is not activated
+                    modal.style.display = "block";
+                }
+            }
+        }
+
+        checkCorsStatus();
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // When the user clicks the link in the modal, set cors_initiated to true
+        document.getElementById('corsLink').onclick = function() {
+            localStorage.setItem('cors_initiated', 'true');
+        }
     </script>
 </body>
 </html>
