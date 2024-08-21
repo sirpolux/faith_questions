@@ -74,7 +74,7 @@ public class MainClass {
                         "int",
                         "age",
                         "25",
-                        "System.out.println"
+                        "System.out.println(age)"
                     ]
                 },
                 {
@@ -609,12 +609,13 @@ public class MainClass {
             // Remove the specified characters from the input string
             inputString = inputString.replace(/[{\n;}\s]/g, " ").trim();
             
+            
             // Replace multiple spaces with a single space
             inputString = inputString.replace(/\s+/g, " ");
-
+           
             // Split the cleaned input string into an array of words
             const derivedArray = inputString.split(" ");
-
+            console.log(derivedArray)
             // Create a copy of the original array to keep track of matched items
             let originalArrayCopy = [...originalArray];
 
