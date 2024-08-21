@@ -49,6 +49,10 @@ public class MainClass {
         <h4 class="font-bold text-gray-800">Response</h4>
         <pre id="output" class="mt-2 text-sm text-gray-700"></pre>
 
+
+        <h4 class="font-bold text-gray-800">Expected result</h4>
+        <pre id="expected_output" class="mt-2 text-sm text-gray-700"></pre>
+
         <h4 class="font-bold text-gray-800">Status</h4>
         <pre id="status" class="mt-2 text-sm text-gray-700"></pre>
 
@@ -57,6 +61,7 @@ public class MainClass {
     <script>
         
          // JSON data
+         let correctanswer;
          const jsonData = {
             "variables": [
                 {
@@ -481,6 +486,8 @@ public class MainClass {
         
         document.getElementById('question').innerText = getQuestionFromUrl();
 
+        
+
 
         function getQuestionFromUrl() {
             const urlParams = new URLSearchParams(window.location.search);
@@ -489,6 +496,7 @@ public class MainClass {
 
             
             if (topic && jsonData[topic]) {
+                correctanswer = jsonData[topic][index].expected_output;
                 return jsonData[topic][index].question;
             }
             return "No question found for the specified topic.";
@@ -569,6 +577,11 @@ public class MainClass {
                 });
                 const result = await response.json();
                 document.getElementById('output').textContent = result.output;
+                document.getElementById('expected_output').textContent =correctanswer;
+                if(result.output == correctanswer){
+                    document.getElementById('status').textContent="Correct Answer";
+                }
+                
             } catch (error) {
                 document.getElementById('output').textContent = 'An error occurred: ' + error.message;
             } finally {
