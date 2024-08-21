@@ -580,8 +580,12 @@ public class MainClass {
                 const result = await response.json();
                 document.getElementById('output').textContent = result.output;
                 document.getElementById('expected_output').textContent =correctanswer;
+                console.log(requiredList);
+                console.log(code);
                 if(result.output == correctanswer || correctanswer =="any"){
+                   
                     let match = matchPercentage(requiredList, code);
+                    console.log(match);
                     if(match>=70){
                         document.getElementById('status').textContent="Passed";
                     }else{
@@ -602,7 +606,13 @@ public class MainClass {
         }
 
         function matchPercentage(originalArray, inputString) {
-            // Split the input string into an array of words
+            // Remove the specified characters from the input string
+            inputString = inputString.replace(/[{\n;}\s]/g, " ").trim();
+            
+            // Replace multiple spaces with a single space
+            inputString = inputString.replace(/\s+/g, " ");
+
+            // Split the cleaned input string into an array of words
             const derivedArray = inputString.split(" ");
 
             // Create a copy of the original array to keep track of matched items
@@ -627,6 +637,13 @@ public class MainClass {
             // Ensure the result is between 0 and 100
             return Math.min(100, Math.max(0, percentage));
         }
+
+        // Example usage:
+        // const originalArray = ["apple", "banana", "orange", "grape"];
+        // const inputString = "apple;  orange\n  grape,   banana; apple}";
+
+        // console.log(matchPercentage(originalArray, inputString)); // Output: 100
+
 
         // Example usage:
         //const originalArray = ["apple", "banana", "orange", "grape", "pear", "mango"];
