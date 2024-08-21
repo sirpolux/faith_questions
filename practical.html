@@ -62,6 +62,7 @@ public class MainClass {
         
          // JSON data
          let correctanswer;
+         let requiredList;
          const jsonData = {
             "variables": [
                 {
@@ -79,12 +80,12 @@ public class MainClass {
                 {
                     "question": "Create a program that declares a String variable 'name' and assigns it your name. Print the value of 'name'.",
                     "expected_input": "No input required.",
-                    "expected_output": "<Your Name>",
+                    "expected_output": "any",
                     "sample_code": "String name = \"Your Name\";\nSystem.out.println(name);",
                     "expected_keyword": [
                         "String",
                         "name",
-                        "<Your Name>",
+                        "",
                         "System.out.println"
                     ]
                 }
@@ -408,8 +409,8 @@ public class MainClass {
                         "String",
                         "name",
                         "System.out.println",
-                        "\"Hello, \"",
-                        "\"Alice!\""
+                        "Hello",
+                        "Alice!"
                     ]
                 },
                 {
@@ -497,6 +498,7 @@ public class MainClass {
             
             if (topic && jsonData[topic]) {
                 correctanswer = jsonData[topic][index].expected_output;
+                requiredList = jsonData[topic][index].expected_keyword;
                 return jsonData[topic][index].question;
             }
             return "No question found for the specified topic.";
@@ -578,9 +580,18 @@ public class MainClass {
                 const result = await response.json();
                 document.getElementById('output').textContent = result.output;
                 document.getElementById('expected_output').textContent =correctanswer;
-                if(result.output == correctanswer){
-                    document.getElementById('status').textContent="Correct Answer";
+                if(result.output == correctanswer || correctanswer =="any"){
+                    let match = matchPercentage(requiredList, code);
+                    if(match>=70){
+                        document.getElementById('status').textContent="Passed";
+                    }else{
+                        document.getElementById('status').textContent="Failed";
+                    }
+                   
+                }else{
+                    document.getElementById('status').textContent="Incorrect Result";
                 }
+                
                 
             } catch (error) {
                 document.getElementById('output').textContent = 'An error occurred: ' + error.message;
@@ -589,6 +600,39 @@ public class MainClass {
                 loadingSpinner.classList.add('hidden');
             }
         }
+
+        function matchPercentage(originalArray, inputString) {
+            // Split the input string into an array of words
+            const derivedArray = inputString.split(" ");
+
+            // Create a copy of the original array to keep track of matched items
+            let originalArrayCopy = [...originalArray];
+
+            // Count the number of matches
+            let matchCount = 0;
+
+            // Iterate over the derived array to find matches in the original array
+            derivedArray.forEach(item => {
+                const index = originalArrayCopy.indexOf(item);
+                if (index !== -1) {
+                    // If a match is found, remove the item from the original array copy to ensure it is only matched once
+                    originalArrayCopy.splice(index, 1);
+                    matchCount++;
+                }
+            });
+
+            // Calculate the percentage of matches
+            const percentage = (matchCount / originalArray.length) * 100;
+
+            // Ensure the result is between 0 and 100
+            return Math.min(100, Math.max(0, percentage));
+        }
+
+        // Example usage:
+        //const originalArray = ["apple", "banana", "orange", "grape", "pear", "mango"];
+        //const inputString = "apple orange grape banana apple";
+        //console.log(matchPercentage(originalArray, inputString)); // Output: 100
+
     </script>
 </body>
 
